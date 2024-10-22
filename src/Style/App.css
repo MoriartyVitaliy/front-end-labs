@@ -1,0 +1,122 @@
+body {
+    background: rgba(22, 20, 22, 1);
+    overflow: hidden;
+}
+
+.wave {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 20vh;
+    animation: wave 20s linear infinite;
+    transform: translate3d(0, 0, 0);
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+    transition: background-color 2s ease, bottom 0.5s ease-in-out;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 10s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 22s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+  }
+}
+/* Navbar container on the left */
+#navbar {
+  border-radius: 0 20px 20px 0; /* Rounded corners on the right side */
+  background-color: #333; /* Background color of the navbar */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  height: 30vh; /* Height of navbar (30% of screen height) */
+  top: 50%; /* Center the navbar vertically */
+  left: 0; /* Position on the left side */
+  transform: translateY(-50%); /* Move navbar up by 50% of its height */
+  width: 70px; /* Default width showing only icons */
+  transition: width 0.3s ease; /* Smooth width transition */
+  display: flex; /* Flexbox for vertical alignment */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  z-index: 1; /* Stay on top of other elements */
+}
+
+/* Navbar links */
+#navbar li {
+  position: relative;
+  width: 100%;
+  margin: 10px 0; /* Vertical spacing between items */
+}
+
+/* Navbar icon and link styles */
+#navbar li a {
+  display: flex; /* Flexbox for icon and text */
+  align-items: center; /* Align vertically */
+  justify-content: center; /* Align horizontally */
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1.2em;
+  height: 60px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+/* Hiding the text initially */
+.nav-text {
+  position: absolute;
+  white-space: nowrap; /* Prevent line breaks in the text */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth appearance */
+  transform: translateX(-20px); /* Text positioned behind navbar */
+  z-index: 0;
+}
+
+/* Show text on hover */
+#navbar li:hover .nav-text {
+  opacity: 1; /* Show the text */
+  transform: translateX(80px); /* Slide the text out to the right */
+}
+
+/* Icon styles */
+.icon {
+  font-size: 1.5em;
+}
+
+/* For small screens */
+@media screen and (max-width: 600px) {
+  #navbar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    justify-content: flex-start;
+  }
+
+  #navbar li {
+    float: none;
+  }
+
+  #navbar li a {
+    text-align: left;
+  }
+}
