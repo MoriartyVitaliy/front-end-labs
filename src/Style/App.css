@@ -41,36 +41,45 @@ body {
       transform: translateX(0);
   }
 }
+
+#navbar{
+  border-radius: 0 20px 20px 0;
+  left: 0; 
+}
+
+#connect {
+  border-radius:  20px 0 0 20px; 
+  right: 0;
+}
+
 /* Navbar container on the left */
-#navbar {
-  border-radius: 0 20px 20px 0; /* Rounded corners on the right side */
-  background-color: #333; /* Background color of the navbar */
+#navbar, #connect {
+  background-color: #333; 
   list-style-type: none;
   margin: 0;
   padding: 0;
   position: fixed;
-  height: 30vh; /* Height of navbar (30% of screen height) */
-  top: 50%; /* Center the navbar vertically */
-  left: 0; /* Position on the left side */
-  transform: translateY(-50%); /* Move navbar up by 50% of its height */
-  width: 70px; /* Default width showing only icons */
-  transition: width 0.3s ease; /* Smooth width transition */
-  display: flex; /* Flexbox for vertical alignment */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center items vertically */
-  align-items: center; /* Center items horizontally */
-  z-index: 1; /* Stay on top of other elements */
+  height: 30vh; 
+  top: 50%; 
+  transform: translateY(-50%);
+  width: 65px; 
+  transition: width 0.3s ease; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1; 
 }
 
 /* Navbar links */
-#navbar li {
+#navbar li, #connect li {
   position: relative;
   width: 100%;
   margin: 10px 0; /* Vertical spacing between items */
 }
 
 /* Navbar icon and link styles */
-#navbar li a {
+#navbar li a, #connect li a {
   display: flex; /* Flexbox for icon and text */
   align-items: center; /* Align vertically */
   justify-content: center; /* Align horizontally */

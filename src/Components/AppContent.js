@@ -1,8 +1,8 @@
 // AppContent.js
 import { Route, Routes } from 'react-router-dom';
-import Home from '../Pages/Home/Home';
-import About from '../Pages/About/About';
-import Contact from '../Pages/Contact/Contact';
+import Home from '../Pages/Home';
+import About from '../Pages/About';
+import Contact from '../Pages/Contact';
 
 function AppContent() {
   return (
