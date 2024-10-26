@@ -1,3 +1,8 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,148 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #181a24;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #e1e1e1;
+}
+
+.column {
+  flex: 1;
+  padding: 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.row {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 25vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: #444;
+  color: white;
+  position: relative;
+}
+
+h3 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.description {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.fa {
+  font-size: 50px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.781), rgba(255, 255, 255, 0.2));
+  transform: skewY(-10deg);
+  opacity: 0;
+  animation: lightbeam 4s ease-in-out;
+}
+
+
+@keyframes lightbeam {
+  0% {
+    top: -130%;
+    opacity: 1;
+  }
+  100% {
+    top: 130%;
+    opacity: 0;
+  }
+}
+
+
+.column:nth-child(1) .card::before {
+  animation-delay: 0s;
+}
+.column:nth-child(2) .card::before {
+  animation-delay: 0.3s;
+}
+.column:nth-child(3) .card::before {
+  animation-delay: 0.6s;
+}
+.column:nth-child(4) .card::before {
+  animation-delay: 0.9s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -1,12 +1,9 @@
-import React from 'react';
-
 function Home() {
-  return( 
-    <div>
-      <h2>
-        Home Page
-      </h2>
-    </div>
+  return (
+    <section id="home" style={{ padding: '100px 20px' }}>
+      <h1>Welcome to the Home Section</h1>
+      <p>This is the Home section content.</p>
+    </section>
   );
 }
 

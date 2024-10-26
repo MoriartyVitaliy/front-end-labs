@@ -1,6 +1,6 @@
 body {
     background: rgba(22, 20, 22, 1);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .wave {
@@ -52,7 +52,6 @@ body {
   right: 0;
 }
 
-/* Navbar container on the left */
 #navbar, #connect {
   background-color: #333; 
   list-style-type: none;
@@ -62,7 +61,7 @@ body {
   height: 30vh; 
   top: 50%; 
   transform: translateY(-50%);
-  width: 65px; 
+  width: 3%; 
   transition: width 0.3s ease; 
   display: flex; 
   flex-direction: column; 
@@ -71,18 +70,16 @@ body {
   z-index: 1; 
 }
 
-/* Navbar links */
 #navbar li, #connect li {
   position: relative;
   width: 100%;
-  margin: 10px 0; /* Vertical spacing between items */
+  margin: 10px 0;
 }
 
-/* Navbar icon and link styles */
 #navbar li a, #connect li a {
-  display: flex; /* Flexbox for icon and text */
-  align-items: center; /* Align vertically */
-  justify-content: center; /* Align horizontally */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
   color: #f2f2f2;
   text-decoration: none;
   font-size: 1.2em;
@@ -91,23 +88,35 @@ body {
   position: relative;
 }
 
-/* Hiding the text initially */
+#navbar li button, #connect li button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f2f2f2;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
+  height: 60px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  margin: auto;
+}
+
 .nav-text {
   position: absolute;
-  white-space: nowrap; /* Prevent line breaks in the text */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth appearance */
-  transform: translateX(-20px); /* Text positioned behind navbar */
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateX(-20px);
   z-index: 0;
 }
 
-/* Show text on hover */
 #navbar li:hover .nav-text {
-  opacity: 1; /* Show the text */
-  transform: translateX(80px); /* Slide the text out to the right */
+  opacity: 1;
+  transform: translateX(80px);
 }
 
-/* Icon styles */
 .icon {
   font-size: 1.5em;
 }
@@ -128,4 +137,166 @@ body {
   #navbar li a {
     text-align: left;
   }
+}
+
+
+
+
+
+
+
+#slider-section {
+  padding: 50px 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.slick-prev, .slick-next {
+  z-index: 1;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.slide-item {
+  position: relative;
+  padding: 10px;
+}
+
+.testimonial-text {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.author-name {
+  font-size: 1.2rem;
+  color: #fff;
+  font-style: italic;
+}
+
+.slick-dots li button:before {
+  color: #fff;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #fff;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 600px) {
+  .testimonial-text {
+    font-size: 1.2rem;
+  }
+
+  .author-name {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+#projects {
+  padding: 20px;
+
+  max-width: 1400px;
+  margin: auto;
+}
+
+#projects-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #FFA500;
+  text-align: center;
+}
+
+#search-pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#search-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: larger;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+#pagination-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+#pagination-buttons button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 2px solid #45b845;
+  background-color: transparent;
+  color: #45b845;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#pagination-buttons button:hover {
+  background-color: #45b845;
+  color: white;
+}
+
+#projects-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#projects-table th, #projects-table td {
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#projects-table th {
+  width: 350px;
+  background-color: #B0B0B0;
+  color: #000000;
+}
+
+#projects-table th:first-child {
+  border-radius: 50px 0 0 0;
+}
+
+#projects-table th:last-child {
+  border-radius: 0 50px 0 0;
+  border: 0;
+}
+
+#projects-table tr:nth-child(even) {
+  background-color: #d378a6;
+}
+#projects-table tr:nth-child(odd) {
+  background-color: #000000;
+}
+
+#projects-table td {
+  border-bottom: 3px solid #FFD700;
 }
